@@ -1,0 +1,342 @@
+{
+  "composition": {
+    "shells": [
+      1,
+      9,
+      54,
+      321,
+      1847,
+      9992,
+      50136,
+      227536,
+      870072,
+      1887748,
+      623800,
+      2644
+    ],
+    "diameter": 11,
+    "score_level_counts": [
+      2632650,
+      877555,
+      146244,
+      16275,
+      1330,
+      105,
+      0,
+      1
+    ],
+    "strict": {
+      "solved_basin": 61,
+      "solved_basin_pct": 0.00166,
+      "nontarget_fixed_points": 758286,
+      "nontarget_fixed_pct": 20.63835,
+      "final_score_histogram": [
+        287730,
+        1450606,
+        1427333,
+        439221,
+        63052,
+        6157,
+        0,
+        61
+      ]
+    },
+    "plateau": {
+      "solved_basin": 61,
+      "spectrum": {
+        "1": {
+          "attractors": 80127,
+          "basin": 1780448
+        },
+        "2": {
+          "attractors": 43774,
+          "basin": 1205629
+        },
+        "3": {
+          "attractors": 2512,
+          "basin": 104887
+        },
+        "4": {
+          "attractors": 19540,
+          "basin": 583196
+        }
+      },
+      "n_attractors": 145953,
+      "max_cycle_length": 4
+    }
+  },
+  "memory": {
+    "solved_basin": 61,
+    "solved_basin_pct": 0.00166
+  },
+  "noise": {
+    "horizon": 200,
+    "success_by_eps": {
+      "0.0": 1.7e-05,
+      "0.02": 0.000194,
+      "0.05": 0.000478,
+      "0.1": 0.000905,
+      "0.2": 0.001582,
+      "0.4": 0.001915,
+      "0.7": 0.000667,
+      "1.0": 4.6e-05
+    },
+    "best_eps": 0.4,
+    "best_success": 0.001915,
+    "deterministic_success": 1.7e-05,
+    "random_walk_success": 4.6e-05
+  },
+  "deletion": {
+    "deterministic": {
+      "1": {
+        "n_patterns": 7,
+        "mean_basin": 62.857143,
+        "min_basin": 25,
+        "max_basin": 103
+      },
+      "2": {
+        "n_patterns": 21,
+        "mean_basin": 69.809524,
+        "min_basin": 19,
+        "max_basin": 146
+      },
+      "3": {
+        "n_patterns": 35,
+        "mean_basin": 91.771429,
+        "min_basin": 19,
+        "max_basin": 260
+      }
+    },
+    "noisy_success_eps01": {
+      "0": 0.000905,
+      "1": 0.000597,
+      "2": 0.00045,
+      "3": 0.000333
+    }
+  },
+  "structural": {
+    "orbit_UR": 29160,
+    "orbit_UR_fraction": 0.007937,
+    "impossible_fraction_UR": 0.992063,
+    "orbit_U": 4,
+    "orbit_UR_pct": 0.793651,
+    "impossible_pct_UR": 99.206349
+  },
+  "chimera": {
+    "target_B_state_distance": 6,
+    "splits": {
+      "0": {
+        "solved_basin": 5,
+        "B_basin": 61,
+        "n_equilibria": 758287,
+        "n_compromise_equilibria": 758285,
+        "solved_is_equilibrium": true,
+        "B_is_equilibrium": true
+      },
+      "1": {
+        "solved_basin": 18,
+        "B_basin": 35,
+        "n_equilibria": 728698,
+        "n_compromise_equilibria": 728696,
+        "solved_is_equilibrium": true,
+        "B_is_equilibrium": true
+      },
+      "2": {
+        "solved_basin": 18,
+        "B_basin": 35,
+        "n_equilibria": 728698,
+        "n_compromise_equilibria": 728696,
+        "solved_is_equilibrium": true,
+        "B_is_equilibrium": true
+      },
+      "3": {
+        "solved_basin": 32,
+        "B_basin": 38,
+        "n_equilibria": 736940,
+        "n_compromise_equilibria": 736938,
+        "solved_is_equilibrium": true,
+        "B_is_equilibrium": true
+      },
+      "4": {
+        "solved_basin": 55,
+        "B_basin": 53,
+        "n_equilibria": 777584,
+        "n_compromise_equilibria": 777582,
+        "solved_is_equilibrium": true,
+        "B_is_equilibrium": true
+      },
+      "5": {
+        "solved_basin": 33,
+        "B_basin": 28,
+        "n_equilibria": 736940,
+        "n_compromise_equilibria": 736938,
+        "solved_is_equilibrium": true,
+        "B_is_equilibrium": true
+      },
+      "6": {
+        "solved_basin": 37,
+        "B_basin": 18,
+        "n_equilibria": 728698,
+        "n_compromise_equilibria": 728696,
+        "solved_is_equilibrium": true,
+        "B_is_equilibrium": true
+      },
+      "7": {
+        "solved_basin": 61,
+        "B_basin": 5,
+        "n_equilibria": 758287,
+        "n_compromise_equilibria": 758285,
+        "solved_is_equilibrium": true,
+        "B_is_equilibrium": true
+      }
+    },
+    "plateau_43_max_cycle": 4,
+    "plateau_43_n_cycles_gt1": 128244
+  },
+  "retarget": {
+    "B": {
+      "target_state": 3324233,
+      "basin": 61
+    },
+    "C": {
+      "target_state": 1477368,
+      "basin": 61
+    },
+    "conjugacy_exact": true
+  },
+  "weights": {
+    "n_draws": 48,
+    "max_basin": 136,
+    "median_basin": 64.0,
+    "min_basin": 24,
+    "homogeneous_basin": 61
+  },
+  "constants": {
+    "SEED": 20260821,
+    "HORIZON": 200,
+    "EPSILONS": [
+      0.0,
+      0.02,
+      0.05,
+      0.1,
+      0.2,
+      0.4,
+      0.7,
+      1.0
+    ],
+    "N_STATES": 3674160,
+    "TARGET_WORDS": {
+      "B": [
+        [
+          "R",
+          1
+        ],
+        [
+          "U",
+          2
+        ],
+        [
+          "F",
+          1
+        ],
+        [
+          "R",
+          2
+        ],
+        [
+          "U",
+          1
+        ],
+        [
+          "F",
+          2
+        ]
+      ],
+      "C": [
+        [
+          "R",
+          1
+        ],
+        [
+          "U",
+          1
+        ],
+        [
+          "F",
+          2
+        ],
+        [
+          "U",
+          1
+        ]
+      ]
+    }
+  },
+  "cited_records": {
+    "levin_dg_bubble_0_frozen": {
+      "value": 0.24,
+      "source": "Zhang, Goldstein and Levin 2025, Adaptive Behavior 33: 25-54"
+    },
+    "levin_dg_bubble_3_frozen": {
+      "value": 0.37,
+      "source": "same"
+    },
+    "levin_dg_insertion_0_frozen": {
+      "value": 1.1,
+      "source": "same"
+    },
+    "levin_dg_insertion_3_frozen": {
+      "value": 1.19,
+      "source": "same"
+    },
+    "levin_aggregation_bubble_selection": {
+      "value": 0.72,
+      "source": "same"
+    },
+    "cube3_states": {
+      "value": 43252003274489856000,
+      "source": "Rokicki, Kociemba, Davidson and Dethridge 2014"
+    },
+    "cube3_diameter_htm": {
+      "value": 20,
+      "source": "same"
+    },
+    "pocket_states_fixed_corner": {
+      "value": 3674160,
+      "source": "7! x 3^6"
+    },
+    "pocket_states_absolute": {
+      "value": 88179840,
+      "source": "8! x 3^7"
+    }
+  },
+  "checks": {
+    "state_count_exact": true,
+    "published_shells_reproduced": true,
+    "diameter_is_11": true,
+    "parity_hole_at_six": true,
+    "solved_basin_is_tiny": true,
+    "local_optima_are_a_fifth": true,
+    "no_state_ends_at_six": true,
+    "plateau_does_not_help_solved": true,
+    "plateau_creates_cycles": true,
+    "plateau_attractor_ecology_large": true,
+    "memory_buys_nothing": true,
+    "noise_interior_optimum": true,
+    "random_walk_nearly_useless_at_horizon": true,
+    "deletion_patterns_complete": true,
+    "deletion_enlarges_deterministic_basin": true,
+    "deletion_degrades_noisy_success": true,
+    "noise_multiplies_a_microscopic_basin": true,
+    "structural_orbit_proper": true,
+    "structural_impossibility_exact": true,
+    "single_face_orbit_tiny": true,
+    "chimera_strict_never_cycles": true,
+    "chimera_compromises_exist": true,
+    "chimera_pure_splits_recover_targets": true,
+    "chimera_plateau_restores_cycles": true,
+    "retarget_conjugacy_exact": true,
+    "weights_move_basin_by_tiebreak": true,
+    "weights_median_near_homogeneous": true
+  }
+}
