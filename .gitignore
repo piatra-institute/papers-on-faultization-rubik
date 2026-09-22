@@ -6,3 +6,7 @@ DOSSIER.pdf
 # raw genesis/seed material — kept local (see workspace docs)
 chats/
 simulation/cache/
+
+# Generated local build records
+*.build.log
+build-manifest.json

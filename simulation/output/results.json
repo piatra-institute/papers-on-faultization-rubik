@@ -83,6 +83,10 @@
     },
     "best_eps": 0.4,
     "best_success": 0.001915,
+    "best_eps_refined": 0.341353,
+    "best_success_refined": 0.001979,
+    "refined_fold_over_deterministic": 119.171109,
+    "refined_fold_over_random_walk": 43.293797,
     "deterministic_success": 1.7e-05,
     "random_walk_success": 4.6e-05
   },
@@ -117,10 +121,10 @@
   "structural": {
     "orbit_UR": 29160,
     "orbit_UR_fraction": 0.007937,
-    "impossible_fraction_UR": 0.992063,
-    "orbit_U": 4,
     "orbit_UR_pct": 0.793651,
-    "impossible_pct_UR": 99.206349
+    "impossible_fraction_UR": 0.992063,
+    "impossible_pct_UR": 99.206349,
+    "orbit_U": 4
   },
   "chimera": {
     "target_B_state_distance": 6,
@@ -322,6 +326,7 @@
     "plateau_creates_cycles": true,
     "plateau_attractor_ecology_large": true,
     "memory_buys_nothing": true,
+    "refined_noise_optimum_at_least_grid_best": true,
     "noise_interior_optimum": true,
     "random_walk_nearly_useless_at_horizon": true,
     "deletion_patterns_complete": true,

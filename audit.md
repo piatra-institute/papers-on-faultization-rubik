@@ -2,6 +2,15 @@
 
 Dated log of editorial passes and verification runs. Newest first.
 
+## 2026-09-23 — prose revision
+
+Prose rewritten against the house standards. Headings made descriptive (Introduction, The self-sorting array experiments, Self-stabilization and related theory, The pocket cube as a test substrate, Composition of local correctness, Deterministic and stochastic repairs, Faults as probes, A ladder of goal-directedness, Conditions for faultization as a method, Objections, Falsification, Conclusion, Reproducibility).
+
+Corrections found during the pass:
+  - The action-noise optimum was reported as "the interior optimum of epsilon 0.4", the best point of the grid {0, 0.02, 0.05, 0.1, 0.2, 0.4, 0.7, 1}. Golden-section refinement between the grid neighbours gives epsilon 0.341 with success within 200 steps of 0.00198 (grid best 0.001915). New fields noise.best_eps_refined, best_success_refined, refined_fold_over_deterministic (119.2) and refined_fold_over_random_walk (43.3), computed from unrounded values; invariant refined_noise_optimum_at_least_grid_best (28 invariants). The earlier "115-fold" and "42-fold" referred to the grid point and are replaced by 119 and 43 at the refined optimum; the grid value is still reported.
+  - Chimera equilibrium counts were given as "roughly 730,000 to 780,000" and "roughly 750,000"; the exact range 728,698 to 777,584 is now stated.
+  - The Objections section referred to "the seed intuitions this paper tested"; now "the initial hypotheses of this study".
+
 ## 2026-08-21 — v1, first full draft to publication
 
 Scope: the entire paper, simulation, and evidence base, from the seed chat to publication.

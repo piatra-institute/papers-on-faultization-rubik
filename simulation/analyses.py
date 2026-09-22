@@ -243,8 +243,7 @@ def run_noise(T9, Dp):
     """Absorption probability within the horizon under an epsilon-mix of
     the plateau controller and a uniform random face turn; exact vector
     iteration, no sampling."""
-    out = {}
-    for eps in EPSILONS:
+    def success(eps):
         u = np.zeros(N_STATES, dtype=np.float32)
         u[SOLVED] = 1.0
         for _ in range(HORIZON):
@@ -256,15 +255,42 @@ def run_noise(T9, Dp):
                 un = un + (eps / 9.0) * acc
             un[SOLVED] = 1.0
             u = un
-        out[str(eps)] = float(u.mean())
+        return float(u.mean())
+
+    out = {}
+    for eps in EPSILONS:
+        out[str(eps)] = success(eps)
     vals = {float(k): v for k, v in out.items()}
     interior = {e: v for e, v in vals.items() if 0.0 < e < 1.0}
     best_eps = max(interior, key=interior.get)
+    # the grid only brackets the optimum; refine it by golden-section
+    # search between the grid neighbours of the best grid point
+    grid = sorted(vals)
+    i = grid.index(best_eps)
+    lo, hi = grid[i - 1], grid[i + 1]
+    g = (5 ** 0.5 - 1) / 2
+    a, b = hi - g * (hi - lo), lo + g * (hi - lo)
+    fa, fb = success(a), success(b)
+    while hi - lo > 0.005:
+        if fa > fb:
+            hi, b, fb = b, a, fa
+            a = hi - g * (hi - lo)
+            fa = success(a)
+        else:
+            lo, a, fa = a, b, fb
+            b = lo + g * (hi - lo)
+            fb = success(b)
+    best_eps_refined = (lo + hi) / 2
+    best_success_refined = success(best_eps_refined)
     return {
         "horizon": HORIZON,
         "success_by_eps": out,
         "best_eps": best_eps,
         "best_success": vals[best_eps],
+        "best_eps_refined": best_eps_refined,
+        "best_success_refined": best_success_refined,
+        "refined_fold_over_deterministic": best_success_refined / vals[0.0],
+        "refined_fold_over_random_walk": best_success_refined / vals[1.0],
         "deterministic_success": vals[0.0],
         "random_walk_success": vals[1.0],
     }
@@ -452,6 +478,8 @@ def _checks(comp, mem, noise, dele, struct, chim, retg, wts) -> dict:
     c["plateau_creates_cycles"] = p["max_cycle_length"] > 1
     c["plateau_attractor_ecology_large"] = p["n_attractors"] > 10_000
     c["memory_buys_nothing"] = mem["solved_basin"] == s["solved_basin"]
+    c["refined_noise_optimum_at_least_grid_best"] = (
+        noise["best_success_refined"] >= noise["best_success"] * 0.999)
     c["noise_interior_optimum"] = (noise["best_success"] > noise["deterministic_success"]
                                    and noise["best_success"] > noise["random_walk_success"])
     c["random_walk_nearly_useless_at_horizon"] = noise["random_walk_success"] < 0.01

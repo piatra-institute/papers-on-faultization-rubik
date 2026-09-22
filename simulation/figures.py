@@ -42,7 +42,7 @@ def plot_microscope(res: dict, path: str) -> None:
     ax1.set_xticks(d)
     ax1.set_xlabel("exact distance from solved (half-turn metric)", fontsize=9)
     ax1.set_ylabel("states (log)", fontsize=9)
-    ax1.set_title("the complete space: 3,674,160 states, diameter 11",
+    ax1.set_title("states by distance from solved (3,674,160; diameter 11)",
                   fontsize=10, color=INK)
     ax1.annotate("published shell table\nreproduced exactly",
                  (1.2, 3e5), fontsize=8, color=BLUE)
@@ -56,9 +56,9 @@ def plot_microscope(res: dict, path: str) -> None:
     ax2.set_xticks(h)
     ax2.set_xlabel("correct corners at the final attractor", fontsize=9)
     ax2.set_ylabel("starting states (log)", fontsize=9)
-    ax2.set_title("the fate of every state under local correctness",
+    ax2.set_title("final number of correct corners under strict voting",
                   fontsize=10, color=INK)
-    ax2.annotate("parity forbids\nexactly 6", (6, 2.2), fontsize=8, color=RED,
+    ax2.annotate("6 correct:\nunreachable", (6, 2.2), fontsize=8, color=RED,
                  ha="center")
     basin = comp["strict"]["solved_basin"]
     ax2.annotate(f"solved: {basin} states\n(0.0017 percent)", (7, hist[7] * 3),
@@ -76,16 +76,17 @@ def plot_repairs(res: dict, path: str) -> None:
     eps = [float(e) for e in noise["success_by_eps"]]
     suc = list(noise["success_by_eps"].values())
     ax1.plot(eps, suc, "-o", color=BLUE, lw=1.8, ms=4)
-    be = noise["best_eps"]
+    be = noise["best_eps_refined"]
+    ax1.plot([be], [noise["best_success_refined"]], "D", color=GREEN, ms=5)
     ax1.axvline(be, color=GREEN, lw=0.9, ls=":")
-    ax1.annotate(f"interior optimum\nat eps {be}", (be + 0.02, noise["best_success"] * 0.75),
+    ax1.annotate(f"refined optimum\nat eps {be:.2f}", (be + 0.02, noise["best_success_refined"] * 0.75),
                  fontsize=8, color=GREEN)
-    ax1.annotate("eps 1: random walk with a stop rule\nsolves everything eventually and\n"
+    ax1.annotate("eps 1 (random walk with a stop rule):\n"
                  f"{noise['random_walk_success']:.5f} within the horizon",
                  (0.52, max(suc) * 0.50), fontsize=7.5, color=RED)
     ax1.set_xlabel("action-noise rate eps", fontsize=9)
     ax1.set_ylabel(f"success within {noise['horizon']} steps", fontsize=9)
-    ax1.set_title("noise as repair: exploration, priced", fontsize=10, color=INK)
+    ax1.set_title("success against action-noise rate", fontsize=10, color=INK)
     _style(ax1)
     # right: the deterministic variations against deletion
     labels = ["strict\nvoting", "plateau\nmoves", "one action\nof memory",
@@ -104,7 +105,7 @@ def plot_repairs(res: dict, path: str) -> None:
     ax2.set_xticklabels(labels, fontsize=7.5)
     ax2.set_ylabel("solved basin (states)", fontsize=9)
     ax2.set_ylim(0, max(vals) * 1.25)
-    ax2.set_title("the deterministic dials, and what actually moves the basin",
+    ax2.set_title("solved basin under deterministic variants and deletion",
                   fontsize=10, color=INK)
     _style(ax2)
     fig.tight_layout()
@@ -134,7 +135,7 @@ def plot_faults(res: dict, path: str) -> None:
     ax1.set_xticks(ks)
     ax1.set_xlabel("deleted agents (of 7)", fontsize=9)
     ax1.set_ylabel("recovery (log)", fontsize=9)
-    ax1.set_title("deleting voters against deleting moves", fontsize=10,
+    ax1.set_title("recovery after deleting voters or moves", fontsize=10,
                   color=INK)
     ax1.legend(frameon=False, fontsize=8, loc="center right")
     _style(ax1)
@@ -146,8 +147,8 @@ def plot_faults(res: dict, path: str) -> None:
              label="compromise equilibria neither faction encodes")
     both = all(splits[str(m)]["solved_is_equilibrium"]
                and splits[str(m)]["B_is_equilibrium"] for m in ms)
-    ax2.annotate("at every split, both encoded targets\nremain equilibria; "
-                 "the conflict is settled\nby basins, never by extinction"
+    ax2.annotate("both encoded targets remain\n"
+                 "equilibria at every split"
                  if both else "", (3.5, min(n_comp) * 1.002),
                  fontsize=7.5, color=INK, ha="center")
     ax2.annotate(f"plateau arbitration at 4-3 restores\n"
@@ -159,7 +160,7 @@ def plot_faults(res: dict, path: str) -> None:
     ax2.set_xlabel("agents keeping the solved target (of 7); the rest carry B",
                    fontsize=9)
     ax2.set_ylabel("compromise equilibria", fontsize=9)
-    ax2.set_title("conflicting targets: ascent on a mixed potential",
+    ax2.set_title("compromise equilibria by target split",
                   fontsize=10, color=INK)
     ax2.legend(frameon=False, fontsize=8, loc="lower right")
     _style(ax2)

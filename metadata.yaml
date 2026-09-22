@@ -1,14 +1,33 @@
 slug: on-faultization-rubik
 web_slug: on-faultization-rubik
-title: "On Faultization: Rubik. What Perturbation Reveals About the Scale of Competence in an Exactly Analyzable Collective"
-header: "On Faultization: Rubik"
-created: "2026-08"        # inception month (drives YYYY/MM archive path)
-date: "August 2026"           # publication month, e.g. "May 2026" (shown on web)
+title: 'On Faultization: Rubik. What Perturbation Reveals About the Scale of Competence in an Exactly
+  Analyzable Collective'
+header: 'On Faultization: Rubik'
+created: 2026-08
+date: August 2026
 paper_dir: paper
 has_simulation: true
-claims_target: results.json   # results.json | claim-ledger | none
+claims_target: results.json
 repo: git@github.com:piatra-institute/papers-on-faultization-rubik.git
 github: https://github.com/piatra-institute/papers-on-faultization-rubik
-status: published             # draft | built | published
-abstract: |-
-  Fault tolerance asks whether a designed function survives damage. This paper develops the reversed question, under the proposed name faultization: decompose a centralized algorithm into locally competent parts, damage them deliberately, and use the damage as an instrument for locating where competence resides and at what scale a goal-directed description begins to predict. The method needs a substrate on which nothing can hide, and the pocket cube supplies one: 3,674,160 reachable states, all enumerable, with an exact distance oracle and every controller's complete dynamics computable. On this substrate the paper runs the program to completion. Seven corner agents, each knowing its own correct pose and predicting every move's effect on itself perfectly, collectively solve 61 states of 3,674,160, a basin of 0.0017 percent, while 758,286 states, 20.6 percent of the space, are local optima where no agent will consent to move; at 72 percent of states no agent is satisfied at all, and the group's parity forbids exactly 6 of 7 agents from ever being content, so the last step of success is always a 2-agent coincidence. The cheap repairs fail measurably: permitting lateral moves converts the local optima into an ecology of 145,953 attractors with cycles up to length 4 and leaves the basin at 61; one remembered action leaves it at 61; the best of 48 heterogeneous weight draws reaches 136 by tie-breaking alone. What moves the basin is damage: deleting 3 of the 7 voters raises the mean basin to 91.8 and the best deletion pattern reaches 260, quadruple the intact collective, while the same fault class contains patterns that cut the basin to 19. Action noise multiplies success 115-fold at its interior optimum of 0.4 and the product is still 0.0019 within 200 steps, against 0.000046 for the random walk with a stop rule that solves everything eventually. Deleting one face's moves strands a corner algebraically: recovery becomes impossible from 99.2 percent of states, the exact boundary between incompetence and impossibility. Populations with conflicting targets, under strict arbitration, are ascent on a mixed potential, provably cycle-free, and at every split both encoded targets survive as equilibria among roughly 750,000 compromises neither faction encodes. Retargeting the same controller to any reachable pose leaves the basin at 61, by group conjugacy: the separation of competency machinery from target is exact, and it buys nothing. Every result is deflationary, and that is the instrument working: a claim of emergent collective agency that cannot survive this microscope on 3,674,160 states has no business being made about a tissue.
+status: published
+abstract: 'Fault tolerance asks whether a designed function survives damage. We develop the reverse question
+  under the proposed name faultization: decompose a centralized algorithm into locally competent parts,
+  damage them deliberately, and use the damage to locate where competence resides and at what scale a
+  goal-directed description becomes predictive. The pocket cube provides a substrate on which every alternative
+  explanation can be enumerated: 3,674,160 reachable states, an exact distance oracle, and exhaustively
+  computable controller dynamics. Seven corner agents, each knowing its correct pose and predicting every
+  move''s effect on itself, collectively solve 61 of 3,674,160 states (0.0017 percent), while 758,286
+  states (20.6 percent) are local optima in which no agent consents to move; in 72 percent of states no
+  agent is satisfied, and the group''s parity makes exactly 6 correct corners impossible. Lateral moves
+  create 145,953 attractors and leave the basin at 61, as does one remembered action; the best of 48 random
+  weightings reaches 136. Deleting 3 of the 7 voters raises the mean basin to 91.8, with patterns ranging
+  from 19 to 260. Action noise at its optimal rate of 0.34 raises success within 200 steps 119-fold, to
+  0.0020. Deleting one face''s moves makes recovery impossible from 99.2 percent of states, separating
+  incompetence from impossibility. Under strict arbitration, conflicting targets define a mixed potential
+  with no cycles, and both targets survive as equilibria among roughly 729,000 to 778,000 equilibria.
+  Retargeting leaves the basin at 61 by group conjugacy. Together these deflationary results form a catalogue
+  of cheaper explanations that claims of emergent collective agency must exclude.'
+web_blurb: Damaging a decomposed controller to locate where competence lives, tested exhaustively on all
+  3,674,160 pocket-cube states. Locally correct agents solve 61 states; only damage and noise move the
+  basin, and every result is deflationary.
