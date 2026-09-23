@@ -47,3 +47,7 @@ Every entry verified against Crossref or the standard bibliographic record befor
 - **Abelson et al. (2000), amorphous computing**: the locality literature is carried by Naor-Stockmeyer and Angluin et al.
 - **The seed's arXiv citation for the 2×2 diameter**: replaced by this paper's own breadth-first search reproducing the published shell table.
 - **Levin bioelectric primary papers (Durant et al.; Vandenberg et al.; Pietak et al.)**: the paper takes no position on the biology; citing the framework papers suffices.
+
+## Structured bibliography (2026-09-23)
+
+The inline reference list was migrated to references.yaml (CSL) and in-text citations to Pandoc [@id] syntax. Twenty-three entries were matched in Crossref and carry their DOIs; zhang2025 (Adaptive Behavior 33(1): 25–54, DOI 10.1177/10597123241269740) and naor1995 (SIAM Journal on Computing 24(6), DOI 10.1137/S0097539793254571) were completed from their Crossref records; dennett1987, joyner2008 and korf1997 (AAAI-97 proceedings, pp. 700–705) were entered by hand. The Crossref records for conant1970 and hsueh1997 carry malformed author names and were corrected by hand; the von Neumann chapter gained its editors (Shannon and McCarthy) and page range (43–98). Source claims in claims.yaml were checked against abstracts from Crossref or OpenAlex.

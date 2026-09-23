@@ -1,0 +1,905 @@
+schema: 1
+coverage: reviewed
+reviewed_manuscript_sha256: d5dfbf3e4a51d06993a87edac22210d9d7888ca8113203ca2e685204738d7580
+claims:
+- id: abs-basin
+  kind: computation
+  passage: Seven corner agents, each knowing its correct pose and predicting every move's effect on itself,
+    collectively solve 61 of 3,674,160 states (0.0017 percent), while 758,286 states (20.6 percent) are
+    local optima in which no agent consents to move; in 72 percent of states no agent is satisfied, and
+    the group's parity makes exactly 6 correct corners impossible.
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /composition/strict/solved_basin
+    reported: '61'
+    decimals: 0
+    units: states in the solved basin
+    conditions: exhaustive over all 3,674,160 fixed-corner pocket-cube states; strict local-correctness
+      voting arbiter
+- id: abs-basin-pct
+  kind: computation
+  passage: Seven corner agents, each knowing its correct pose and predicting every move's effect on itself,
+    collectively solve 61 of 3,674,160 states (0.0017 percent), while 758,286 states (20.6 percent) are
+    local optima in which no agent consents to move; in 72 percent of states no agent is satisfied, and
+    the group's parity makes exactly 6 correct corners impossible.
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /composition/strict/solved_basin_pct
+    reported: '0.0017'
+    decimals: 4
+    units: percent of states
+    conditions: exhaustive over all 3,674,160 fixed-corner pocket-cube states; strict local-correctness
+      voting arbiter
+- id: abs-fixed
+  kind: computation
+  passage: Seven corner agents, each knowing its correct pose and predicting every move's effect on itself,
+    collectively solve 61 of 3,674,160 states (0.0017 percent), while 758,286 states (20.6 percent) are
+    local optima in which no agent consents to move; in 72 percent of states no agent is satisfied, and
+    the group's parity makes exactly 6 correct corners impossible.
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /composition/strict/nontarget_fixed_points
+    reported: 758,286
+    decimals: 0
+    units: non-target fixed points
+    conditions: exhaustive over all 3,674,160 fixed-corner pocket-cube states; strict local-correctness
+      voting arbiter
+- id: abs-fixed-pct
+  kind: computation
+  passage: Seven corner agents, each knowing its correct pose and predicting every move's effect on itself,
+    collectively solve 61 of 3,674,160 states (0.0017 percent), while 758,286 states (20.6 percent) are
+    local optima in which no agent consents to move; in 72 percent of states no agent is satisfied, and
+    the group's parity makes exactly 6 correct corners impossible.
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /composition/strict/nontarget_fixed_pct
+    reported: '20.6'
+    decimals: 1
+    units: percent of states
+    conditions: exhaustive over all 3,674,160 fixed-corner pocket-cube states; strict local-correctness
+      voting arbiter
+- id: abs-attractors
+  kind: computation
+  passage: Lateral moves create 145,953 attractors and leave the basin at 61, as does one remembered action;
+    the best of 48 random weightings reaches 136.
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /composition/plateau/n_attractors
+    reported: 145,953
+    decimals: 0
+    units: attractors
+    conditions: exhaustive over all 3,674,160 fixed-corner pocket-cube states; plateau (lateral-move)
+      arbiter
+- id: abs-weights
+  kind: computation
+  passage: Lateral moves create 145,953 attractors and leave the basin at 61, as does one remembered action;
+    the best of 48 random weightings reaches 136.
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /weights/max_basin
+    reported: '136'
+    decimals: 0
+    units: states in the solved basin
+    conditions: exhaustive over all 3,674,160 fixed-corner pocket-cube states; best of 48 seeded random
+      weightings
+- id: abs-memory
+  kind: computation
+  passage: Lateral moves create 145,953 attractors and leave the basin at 61, as does one remembered action;
+    the best of 48 random weightings reaches 136.
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /memory/solved_basin
+    reported: '61'
+    decimals: 0
+    units: states in the solved basin
+    conditions: exhaustive over all 3,674,160 fixed-corner pocket-cube states; one remembered action
+- id: abs-del3
+  kind: computation
+  passage: Deleting 3 of the 7 voters raises the mean basin to 91.8, with patterns ranging from 19 to
+    260.
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /deletion/deterministic/3/mean_basin
+    reported: '91.8'
+    decimals: 1
+    units: mean solved basin over 35 patterns
+    conditions: exhaustive over all 3,674,160 fixed-corner pocket-cube states; 3 of 7 voters deleted
+- id: abs-del3-min
+  kind: computation
+  passage: Deleting 3 of the 7 voters raises the mean basin to 91.8, with patterns ranging from 19 to
+    260.
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /deletion/deterministic/3/min_basin
+    reported: '19'
+    decimals: 0
+    units: states
+    conditions: exhaustive over all 3,674,160 fixed-corner pocket-cube states; worst 3-deletion pattern
+- id: abs-del3-max
+  kind: computation
+  passage: Deleting 3 of the 7 voters raises the mean basin to 91.8, with patterns ranging from 19 to
+    260.
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /deletion/deterministic/3/max_basin
+    reported: '260'
+    decimals: 0
+    units: states
+    conditions: exhaustive over all 3,674,160 fixed-corner pocket-cube states; best 3-deletion pattern
+- id: abs-eps
+  kind: computation
+  passage: Action noise at its optimal rate of 0.34 raises success within 200 steps 119-fold, to 0.0020.
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /noise/best_eps_refined
+    reported: '0.34'
+    decimals: 2
+    units: action-noise rate
+    conditions: exhaustive over all 3,674,160 fixed-corner pocket-cube states; golden-section refinement,
+      horizon 200
+- id: abs-fold
+  kind: computation
+  passage: Action noise at its optimal rate of 0.34 raises success within 200 steps 119-fold, to 0.0020.
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /noise/refined_fold_over_deterministic
+    reported: '119'
+    decimals: 0
+    units: fold increase over the deterministic controller
+    conditions: exhaustive over all 3,674,160 fixed-corner pocket-cube states; horizon 200
+- id: abs-success
+  kind: computation
+  passage: Action noise at its optimal rate of 0.34 raises success within 200 steps 119-fold, to 0.0020.
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /noise/best_success_refined
+    reported: '0.0020'
+    decimals: 4
+    units: success probability within 200 steps
+    conditions: exhaustive over all 3,674,160 fixed-corner pocket-cube states; uniform initial state
+- id: abs-impossible
+  kind: computation
+  passage: Deleting one face's moves makes recovery impossible from 99.2 percent of states, separating
+    incompetence from impossibility.
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /structural/impossible_pct_UR
+    reported: '99.2'
+    decimals: 1
+    units: percent of states outside the surviving orbit
+    conditions: generators of one face deleted; orbit of the remaining generators
+- id: abs-eq-min
+  kind: computation
+  passage: Under strict arbitration, conflicting targets define a mixed potential with no cycles, and
+    both targets survive as equilibria among roughly 729,000 to 778,000 equilibria.
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /chimera/splits/1/n_equilibria
+    reported: 729,000
+    significant_digits: 3
+    units: equilibria (smallest over splits)
+    conditions: exhaustive over all 3,674,160 fixed-corner pocket-cube states; strict arbiter, conflicting
+      targets
+- id: abs-eq-max
+  kind: computation
+  passage: Under strict arbitration, conflicting targets define a mixed potential with no cycles, and
+    both targets survive as equilibria among roughly 729,000 to 778,000 equilibria.
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /chimera/splits/4/n_equilibria
+    reported: 778,000
+    significant_digits: 3
+    units: equilibria (largest over splits, 4 against 3)
+    conditions: exhaustive over all 3,674,160 fixed-corner pocket-cube states; strict arbiter, conflicting
+      targets
+- id: abs-retarget
+  kind: computation
+  passage: Retargeting leaves the basin at 61 by group conjugacy.
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /retarget/B/basin
+    reported: '61'
+    decimals: 0
+    units: states in the basin of target B
+    conditions: exhaustive over all 3,674,160 fixed-corner pocket-cube states
+- id: shells-diameter
+  kind: computation
+  passage: Our implementation reproduces the published distance shells exactly, 1, 9, 54, 321, 1,847,
+    9,992, 50,136, 227,536, 870,072, 1,887,748, 623,800 and 2,644, summing to 3,674,160 with diameter
+    11, and this reproduction calibrates every number below (Figure 1, left).
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /composition/diameter
+    reported: '11'
+    decimals: 0
+    units: maximum distance (quarter- and half-turn metric)
+    conditions: exhaustive over all 3,674,160 fixed-corner pocket-cube states
+- id: shells-last
+  kind: computation
+  passage: Our implementation reproduces the published distance shells exactly, 1, 9, 54, 321, 1,847,
+    9,992, 50,136, 227,536, 870,072, 1,887,748, 623,800 and 2,644, summing to 3,674,160 with diameter
+    11, and this reproduction calibrates every number below (Figure 1, left).
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /composition/shells/10
+    reported: 623,800
+    decimals: 0
+    units: states at distance 10
+    conditions: exhaustive over all 3,674,160 fixed-corner pocket-cube states
+- id: shells-9
+  kind: computation
+  passage: Our implementation reproduces the published distance shells exactly, 1, 9, 54, 321, 1,847,
+    9,992, 50,136, 227,536, 870,072, 1,887,748, 623,800 and 2,644, summing to 3,674,160 with diameter
+    11, and this reproduction calibrates every number below (Figure 1, left).
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /composition/shells/9
+    reported: 1,887,748
+    decimals: 0
+    units: states at distance 9
+    conditions: exhaustive over all 3,674,160 fixed-corner pocket-cube states
+- id: shells-11
+  kind: computation
+  passage: Our implementation reproduces the published distance shells exactly, 1, 9, 54, 321, 1,847,
+    9,992, 50,136, 227,536, 870,072, 1,887,748, 623,800 and 2,644, summing to 3,674,160 with diameter
+    11, and this reproduction calibrates every number below (Figure 1, left).
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /composition/shells/11
+    reported: 2,644
+    decimals: 0
+    units: states at distance 11
+    conditions: exhaustive over all 3,674,160 fixed-corner pocket-cube states
+- id: basin-body
+  kind: computation
+  passage: The solved basin contains 61 states, 0.0017 percent.
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /composition/strict/solved_basin_pct
+    reported: '0.0017'
+    decimals: 4
+    units: percent of states
+    conditions: exhaustive over all 3,674,160 fixed-corner pocket-cube states; strict local-correctness
+      voting arbiter
+- id: fixed-body
+  kind: computation
+  passage: There are 758,286 non-target fixed points, 20.6 percent of the space, at which every move strictly
+    decreases the number of satisfied agents and the collective does not act.
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /composition/strict/nontarget_fixed_pct
+    reported: '20.6'
+    decimals: 1
+    units: percent
+    conditions: exhaustive over all 3,674,160 fixed-corner pocket-cube states; strict local-correctness
+      voting arbiter
+- id: zero-signal
+  kind: interpretation
+  passage: 'The score landscape explains the failure: in 72 percent of all states no agent is satisfied,
+    so the signal the collective climbs is absent almost everywhere, and where it exists the climb is
+    short.'
+  rationale: 72 percent is /composition/score_level_counts/0 = 2,632,650 divided by 3,674,160 states (71.65
+    percent), computed from stored counts rather than stored as a separate field.
+- id: plateau-fixed
+  kind: computation
+  passage: 'An arbiter that moves whenever no strict decrease is available converts the 758,286 dead ends
+    into 145,953 attractors: 80,127 fixed points holding 1,780,448 states, 43,774 cycles of length 2 holding
+    1,205,629, 2,512 cycles of length 3 holding 104,887, and 19,540 cycles of length 4 holding 583,196.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /composition/plateau/spectrum/1/attractors
+    reported: 80,127
+    decimals: 0
+    units: fixed points
+    conditions: exhaustive over all 3,674,160 fixed-corner pocket-cube states; plateau arbiter
+- id: plateau-fixed-basin
+  kind: computation
+  passage: 'An arbiter that moves whenever no strict decrease is available converts the 758,286 dead ends
+    into 145,953 attractors: 80,127 fixed points holding 1,780,448 states, 43,774 cycles of length 2 holding
+    1,205,629, 2,512 cycles of length 3 holding 104,887, and 19,540 cycles of length 4 holding 583,196.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /composition/plateau/spectrum/1/basin
+    reported: 1,780,448
+    decimals: 0
+    units: states draining to fixed points
+    conditions: exhaustive over all 3,674,160 fixed-corner pocket-cube states; plateau arbiter
+- id: plateau-2
+  kind: computation
+  passage: 'An arbiter that moves whenever no strict decrease is available converts the 758,286 dead ends
+    into 145,953 attractors: 80,127 fixed points holding 1,780,448 states, 43,774 cycles of length 2 holding
+    1,205,629, 2,512 cycles of length 3 holding 104,887, and 19,540 cycles of length 4 holding 583,196.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /composition/plateau/spectrum/2/attractors
+    reported: 43,774
+    decimals: 0
+    units: 2-cycles
+    conditions: exhaustive over all 3,674,160 fixed-corner pocket-cube states; plateau arbiter
+- id: plateau-2b
+  kind: computation
+  passage: 'An arbiter that moves whenever no strict decrease is available converts the 758,286 dead ends
+    into 145,953 attractors: 80,127 fixed points holding 1,780,448 states, 43,774 cycles of length 2 holding
+    1,205,629, 2,512 cycles of length 3 holding 104,887, and 19,540 cycles of length 4 holding 583,196.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /composition/plateau/spectrum/2/basin
+    reported: 1,205,629
+    decimals: 0
+    units: states
+    conditions: exhaustive over all 3,674,160 fixed-corner pocket-cube states; plateau arbiter
+- id: plateau-3
+  kind: computation
+  passage: 'An arbiter that moves whenever no strict decrease is available converts the 758,286 dead ends
+    into 145,953 attractors: 80,127 fixed points holding 1,780,448 states, 43,774 cycles of length 2 holding
+    1,205,629, 2,512 cycles of length 3 holding 104,887, and 19,540 cycles of length 4 holding 583,196.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /composition/plateau/spectrum/3/attractors
+    reported: 2,512
+    decimals: 0
+    units: 3-cycles
+    conditions: exhaustive over all 3,674,160 fixed-corner pocket-cube states; plateau arbiter
+- id: plateau-3b
+  kind: computation
+  passage: 'An arbiter that moves whenever no strict decrease is available converts the 758,286 dead ends
+    into 145,953 attractors: 80,127 fixed points holding 1,780,448 states, 43,774 cycles of length 2 holding
+    1,205,629, 2,512 cycles of length 3 holding 104,887, and 19,540 cycles of length 4 holding 583,196.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /composition/plateau/spectrum/3/basin
+    reported: 104,887
+    decimals: 0
+    units: states
+    conditions: exhaustive over all 3,674,160 fixed-corner pocket-cube states; plateau arbiter
+- id: plateau-4
+  kind: computation
+  passage: 'An arbiter that moves whenever no strict decrease is available converts the 758,286 dead ends
+    into 145,953 attractors: 80,127 fixed points holding 1,780,448 states, 43,774 cycles of length 2 holding
+    1,205,629, 2,512 cycles of length 3 holding 104,887, and 19,540 cycles of length 4 holding 583,196.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /composition/plateau/spectrum/4/attractors
+    reported: 19,540
+    decimals: 0
+    units: 4-cycles
+    conditions: exhaustive over all 3,674,160 fixed-corner pocket-cube states; plateau arbiter
+- id: plateau-4b
+  kind: computation
+  passage: 'An arbiter that moves whenever no strict decrease is available converts the 758,286 dead ends
+    into 145,953 attractors: 80,127 fixed points holding 1,780,448 states, 43,774 cycles of length 2 holding
+    1,205,629, 2,512 cycles of length 3 holding 104,887, and 19,540 cycles of length 4 holding 583,196.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /composition/plateau/spectrum/4/basin
+    reported: 583,196
+    decimals: 0
+    units: states
+    conditions: exhaustive over all 3,674,160 fixed-corner pocket-cube states; plateau arbiter
+- id: plateau-basin
+  kind: computation
+  passage: The solved basin remains 61.
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /composition/plateau/solved_basin
+    reported: '61'
+    decimals: 0
+    units: states
+    conditions: exhaustive over all 3,674,160 fixed-corner pocket-cube states; plateau arbiter
+- id: weights-best
+  kind: computation
+  passage: The best draw reaches a basin of 136, the worst 24 and the median 64, against 61 for homogeneous
+    weights, so weights move the basin in both directions, as rearranged tie-breaks would, with no systematic
+    gain.
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /weights/max_basin
+    reported: '136'
+    decimals: 0
+    units: states
+    conditions: exhaustive over all 3,674,160 fixed-corner pocket-cube states; 48 seeded weight draws
+- id: weights-worst
+  kind: computation
+  passage: The best draw reaches a basin of 136, the worst 24 and the median 64, against 61 for homogeneous
+    weights, so weights move the basin in both directions, as rearranged tie-breaks would, with no systematic
+    gain.
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /weights/min_basin
+    reported: '24'
+    decimals: 0
+    units: states
+    conditions: exhaustive over all 3,674,160 fixed-corner pocket-cube states; 48 seeded weight draws
+- id: weights-median
+  kind: computation
+  passage: The best draw reaches a basin of 136, the worst 24 and the median 64, against 61 for homogeneous
+    weights, so weights move the basin in both directions, as rearranged tie-breaks would, with no systematic
+    gain.
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /weights/median_basin
+    reported: '64'
+    decimals: 0
+    units: states
+    conditions: exhaustive over all 3,674,160 fixed-corner pocket-cube states; 48 seeded weight draws
+- id: noise-0
+  kind: computation
+  passage: Mixing the deterministic controller with a uniform random face turn at rate ε, computed by
+    exact iteration over the full state vector, gives success within 200 steps of 0.000017 at ε = 0 and
+    0.000046 at ε = 1.
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /noise/deterministic_success
+    reported: '0.000017'
+    decimals: 6
+    units: success probability
+    conditions: exhaustive over all 3,674,160 fixed-corner pocket-cube states; ε = 0
+- id: noise-1
+  kind: computation
+  passage: Mixing the deterministic controller with a uniform random face turn at rate ε, computed by
+    exact iteration over the full state vector, gives success within 200 steps of 0.000017 at ε = 0 and
+    0.000046 at ε = 1.
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /noise/random_walk_success
+    reported: '0.000046'
+    decimals: 6
+    units: success probability
+    conditions: exhaustive over all 3,674,160 fixed-corner pocket-cube states; ε = 1 (random walk with
+      stop rule)
+- id: noise-grid
+  kind: computation
+  passage: On the grid of rates examined, the largest value is 0.0019 at ε = 0.4, and golden-section refinement
+    places the optimum at ε = 0.34 with success 0.0020 (Figure 2, left).
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /noise/best_success
+    reported: '0.0019'
+    decimals: 4
+    units: success probability
+    conditions: exhaustive over all 3,674,160 fixed-corner pocket-cube states; ε = 0.4 on the grid
+- id: noise-refined
+  kind: computation
+  passage: On the grid of rates examined, the largest value is 0.0019 at ε = 0.4, and golden-section refinement
+    places the optimum at ε = 0.34 with success 0.0020 (Figure 2, left).
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /noise/best_success_refined
+    reported: '0.0020'
+    decimals: 4
+    units: success probability
+    conditions: exhaustive over all 3,674,160 fixed-corner pocket-cube states; ε = 0.34 refined
+- id: noise-43
+  kind: computation
+  passage: The optimum exceeds it 43-fold, so the voting landscape carries information, and exceeds the
+    deterministic controller 119-fold, so exploration contributes.
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /noise/refined_fold_over_random_walk
+    reported: '43'
+    decimals: 0
+    units: fold over the random walk
+    conditions: exhaustive over all 3,674,160 fixed-corner pocket-cube states
+- id: noise-119
+  kind: computation
+  passage: The optimum exceeds it 43-fold, so the voting landscape carries information, and exceeds the
+    deterministic controller 119-fold, so exploration contributes.
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /noise/refined_fold_over_deterministic
+    reported: '119'
+    decimals: 0
+    units: fold over the deterministic controller
+    conditions: exhaustive over all 3,674,160 fixed-corner pocket-cube states
+- id: del1
+  kind: computation
+  passage: Removing 1 of the 7 agents raises the mean basin over the 7 deletion patterns to 62.9; removing
+    2 raises it to 69.8; removing 3 raises it to 91.8, with the best 3-deletion pattern reaching 260,
+    more than 4 times the intact basin, and the worst falling to 19 (Figure 2, right).
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /deletion/deterministic/1/mean_basin
+    reported: '62.9'
+    decimals: 1
+    units: mean basin
+    conditions: exhaustive over all 3,674,160 fixed-corner pocket-cube states; 7 one-deletion patterns
+- id: del2
+  kind: computation
+  passage: Removing 1 of the 7 agents raises the mean basin over the 7 deletion patterns to 62.9; removing
+    2 raises it to 69.8; removing 3 raises it to 91.8, with the best 3-deletion pattern reaching 260,
+    more than 4 times the intact basin, and the worst falling to 19 (Figure 2, right).
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /deletion/deterministic/2/mean_basin
+    reported: '69.8'
+    decimals: 1
+    units: mean basin
+    conditions: exhaustive over all 3,674,160 fixed-corner pocket-cube states; 21 two-deletion patterns
+- id: del3
+  kind: computation
+  passage: Removing 1 of the 7 agents raises the mean basin over the 7 deletion patterns to 62.9; removing
+    2 raises it to 69.8; removing 3 raises it to 91.8, with the best 3-deletion pattern reaching 260,
+    more than 4 times the intact basin, and the worst falling to 19 (Figure 2, right).
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /deletion/deterministic/3/mean_basin
+    reported: '91.8'
+    decimals: 1
+    units: mean basin
+    conditions: exhaustive over all 3,674,160 fixed-corner pocket-cube states; 35 three-deletion patterns
+- id: del3-max
+  kind: computation
+  passage: Removing 1 of the 7 agents raises the mean basin over the 7 deletion patterns to 62.9; removing
+    2 raises it to 69.8; removing 3 raises it to 91.8, with the best 3-deletion pattern reaching 260,
+    more than 4 times the intact basin, and the worst falling to 19 (Figure 2, right).
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /deletion/deterministic/3/max_basin
+    reported: '260'
+    decimals: 0
+    units: states
+    conditions: exhaustive over all 3,674,160 fixed-corner pocket-cube states
+- id: del3-min
+  kind: computation
+  passage: Removing 1 of the 7 agents raises the mean basin over the 7 deletion patterns to 62.9; removing
+    2 raises it to 69.8; removing 3 raises it to 91.8, with the best 3-deletion pattern reaching 260,
+    more than 4 times the intact basin, and the worst falling to 19 (Figure 2, right).
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /deletion/deterministic/3/min_basin
+    reported: '19'
+    decimals: 0
+    units: states
+    conditions: exhaustive over all 3,674,160 fixed-corner pocket-cube states
+- id: del-noisy0
+  kind: computation
+  passage: 'Under the noise channel the direction reverses: success at ε = 0.1 falls monotonically from
+    0.000905 intact to 0.000333 with 3 agents deleted, so the redundant votes helped the stochastic explorer
+    while obstructing the deterministic climber.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /deletion/noisy_success_eps01/0
+    reported: '0.000905'
+    decimals: 6
+    units: success probability
+    conditions: exhaustive over all 3,674,160 fixed-corner pocket-cube states; ε = 0.1, intact
+- id: del-noisy3
+  kind: computation
+  passage: 'Under the noise channel the direction reverses: success at ε = 0.1 falls monotonically from
+    0.000905 intact to 0.000333 with 3 agents deleted, so the redundant votes helped the stochastic explorer
+    while obstructing the deterministic climber.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /deletion/noisy_success_eps01/3
+    reported: '0.000333'
+    decimals: 6
+    units: success probability
+    conditions: exhaustive over all 3,674,160 fixed-corner pocket-cube states; ε = 0.1, 3 agents deleted
+- id: orbit
+  kind: computation
+  passage: Removing one face's 3 generators leaves a subgroup whose orbit through solved contains 29,160
+    states, 0.79 percent of the space.
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /structural/orbit_UR
+    reported: 29,160
+    decimals: 0
+    units: states in the orbit
+    conditions: one face's generators deleted
+- id: orbit-pct
+  kind: computation
+  passage: Removing one face's 3 generators leaves a subgroup whose orbit through solved contains 29,160
+    states, 0.79 percent of the space.
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /structural/orbit_UR_pct
+    reported: '0.79'
+    decimals: 2
+    units: percent of states
+    conditions: one face's generators deleted
+- id: impossible-pct
+  kind: computation
+  passage: From the other 99.2 percent no controller can recover, because the fixed corner's neighbour
+    on the deleted face can no longer move.
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /structural/impossible_pct_UR
+    reported: '99.2'
+    decimals: 1
+    units: percent of states
+    conditions: one face's generators deleted
+- id: orbit-2faces
+  kind: computation
+  passage: Removing 2 faces leaves an orbit of 4 states.
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /structural/orbit_U
+    reported: '4'
+    decimals: 0
+    units: states
+    conditions: two faces' generators deleted
+- id: target-b-dist
+  kind: computation
+  passage: We give m agents the solved target and 7 − m agents a target B at distance 6, and keep the
+    strict arbiter.
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /chimera/target_B_state_distance
+    reported: '6'
+    decimals: 0
+    units: moves from solved
+    conditions: target B
+- id: eq-range-min
+  kind: computation
+  passage: 'The enumeration adds the scale of the resulting landscape: between 728,698 and 777,584 equilibria
+    at every split, nearly all of them compromises that neither faction encodes.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /chimera/splits/1/n_equilibria
+    reported: 728,698
+    decimals: 0
+    units: equilibria
+    conditions: exhaustive over all 3,674,160 fixed-corner pocket-cube states; smallest over the mixed
+      splits
+- id: eq-range-max
+  kind: computation
+  passage: 'The enumeration adds the scale of the resulting landscape: between 728,698 and 777,584 equilibria
+    at every split, nearly all of them compromises that neither faction encodes.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /chimera/splits/4/n_equilibria
+    reported: 777,584
+    decimals: 0
+    units: equilibria
+    conditions: exhaustive over all 3,674,160 fixed-corner pocket-cube states; split 4 against 3
+- id: eq-basins-55
+  kind: computation
+  passage: The count is largest at the most balanced split of 4 against 3, where the two factions' basins
+    are 55 and 53.
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /chimera/splits/4/solved_basin
+    reported: '55'
+    decimals: 0
+    units: states in the solved basin
+    conditions: exhaustive over all 3,674,160 fixed-corner pocket-cube states; split 4 against 3
+- id: eq-basins-53
+  kind: computation
+  passage: The count is largest at the most balanced split of 4 against 3, where the two factions' basins
+    are 55 and 53.
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /chimera/splits/4/B_basin
+    reported: '53'
+    decimals: 0
+    units: states in the B basin
+    conditions: exhaustive over all 3,674,160 fixed-corner pocket-cube states; split 4 against 3
+- id: soft-cycles
+  kind: computation
+  passage: Softening the arbiter to allow lateral moves restores 128,244 cycles of length up to 4.
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /chimera/plateau_43_n_cycles_gt1
+    reported: 128,244
+    decimals: 0
+    units: cycles of length above 1
+    conditions: exhaustive over all 3,674,160 fixed-corner pocket-cube states; plateau arbiter, split
+      4 against 3
+- id: retarget-b
+  kind: computation
+  passage: Group translation makes the new closed loop conjugate to the old, so the basin of the new target
+    equals that of the old, and the computation gives 61 for target B, 61 for target C and 61 for solved.
+  evidence:
+    file: simulation/output/results.json
+    run_id: cube
+    pointer: /retarget/C/basin
+    reported: '61'
+    decimals: 0
+    units: states in the basin of target C
+    conditions: exhaustive over all 3,674,160 fixed-corner pocket-cube states
+- id: memory-pairs
+  kind: interpretation
+  passage: 'The first is memory: the collective remembers 1 action and may not undo it, the standard remedy
+    for 2-cycles, computed exhaustively on the augmented space of 36,741,600 state-memory pairs.'
+  rationale: 36,741,600 is 3,674,160 states times 10 memory values (9 face turns plus none); a size of
+    the augmented space, not a stored result. The basin of 61 is /memory/solved_basin.
+- id: faultization-def
+  kind: definition
+  passage: We call the method faultization; the term is proposed here and does not belong to an established
+    field.
+  rationale: Proposed term for using deliberate damage to locate competence and the scale of goal-directed
+    description.
+- id: dpc-def
+  kind: definition
+  passage: Distributed partial competence, the condition of interest, consists of components that each
+    solve a real subproblem while none holds the global policy.
+  rationale: 'Defines the target condition: components that each solve a real subproblem while none holds
+    the global policy.'
+- id: ladder-def
+  kind: definition
+  passage: Claims about goal-directedness come in grades.
+  rationale: Defines the G0-G5 ladder used to grade the controllers.
+- id: arbiter-design
+  kind: assumption
+  passage: An arbiter blind to the target and the state sums the votes, executes the first move in a fixed
+    order that strictly increases the number of satisfied agents, and stops when no move does.
+  rationale: Specifies the strict arbitration rule; the plateau, memory, weighting and noise variants
+    test its consequences.
+- id: noop
+  kind: assumption
+  passage: Because the solved state cannot be absorbing if a face must turn at every step, the controller
+    includes a no-op, and homeostasis means remaining at the target as well as reaching it.
+  rationale: Design choice required for homeostasis at the target.
+- id: composition-fails
+  kind: interpretation
+  passage: 'Complete and error-free local correctness therefore does not compose into global competence,
+    for a structural reason: every face turn moves 4 corners at once, and single-agent scores cannot express
+    that coupling.'
+  rationale: Inference from the exhaustive result (basin 61) and the parity constraint (no state with
+    exactly 6 correct corners, /composition/score_level_counts/6 = 0).
+- id: arbiter-part
+  kind: interpretation
+  passage: A minor change in arbitration reorganized a fifth of the space into 145,953 attractors without
+    affecting competence, which shows that the arbiter is part of the system and must be examined as such.
+  rationale: 'From the plateau spectrum: attractor structure changes while the solved basin stays at 61.'
+- id: reprog-independent
+  kind: interpretation
+  passage: A mechanism can be fully reprogrammable and uniformly weak, so reprogrammability and competence
+    are independent properties, and evidence for one is not evidence for the other.
+  rationale: From exact conjugacy of retargeted basins (61 for every target).
+- id: catalogue
+  kind: normative
+  passage: The exhaustive substrate instead yields the complete list of deflationary explanations that
+    a stronger claim on any substrate must exclude item by item.
+  rationale: Methodological standard the paper proposes for claims of emergent collective competence.
+- id: zhang-findings
+  kind: source
+  passage: The distributed implementations often retained more final order than their centralized counterparts,
+    the ranking of algorithms reversed between the two fault grades, mixtures of policies still sorted
+    and transiently clustered by policy, and populations given opposite sorting directions settled into
+    stable macroscopic compromises.
+  evidence:
+    citation_id: zhang2025
+    locator: Abstract
+    verified: true
+    verification_note: 'Crossref abstract (DOI 10.1177/10597123241269740): arrays of autonomous elements
+      sort themselves more reliably and robustly than traditional implementations in the presence of errors;
+      temporary reduction of progress to navigate around a defect; clustering in chimeric arrays of two
+      algorithms.'
+- id: rokicki-20
+  kind: source
+  passage: The full 3×3×3 cube has 43,252,003,274,489,856,000 states and a diameter of 20 in the half-turn
+    metric [@rokicki2014], and its optimal solvers use pattern databases, a form of centralized control
+    with global information [@korf1997; @joyner2008].
+  evidence:
+    citation_id: rokicki2014
+    locator: Abstract
+    verified: true
+    verification_note: 'Crossref abstract: every position solvable in 20 moves or fewer (any twist of
+      any face), roughly 4.3 × 10^19 positions.'
+- id: avizienis-taxonomy
+  kind: source
+  passage: The method also requires the dependability tradition's separation of fault, error and failure
+    [@avizienis2004].
+  evidence:
+    citation_id: avizienis2004
+    locator: Abstract
+    verified: true
+    verification_note: 'OpenAlex abstract: threats to dependability defined as faults, errors and failures,
+      with fault tolerance among the means.'
+- id: ghosh-containment
+  kind: source
+  passage: Fault containment added the requirement that recovery cost scale with the fault and not with
+    the system [@ghosh1996].
+  evidence:
+    citation_id: ghosh1996
+    locator: Abstract
+    verified: true
+    verification_note: 'OpenAlex abstract: fault containment requires disruption proportional to fault
+      severity while retaining self-stabilization.'
+- id: edelman-degeneracy
+  kind: source
+  passage: The oldest result shows that architecture can make a system more reliable than any of its parts
+    [@neumann1956], and in biology strong robustness runs through degeneracy, structurally different components
+    with overlapping functions, more than through duplication [@edelman2001].
+  evidence:
+    citation_id: edelman2001
+    locator: Abstract
+    verified: true
+    verification_note: 'Crossref abstract: degeneracy, structurally different elements performing the
+      same function, is a ubiquitous biological property.'
+- id: conant-regulator
+  kind: source
+  passage: 'G2 is robust regulation: recovery from perturbation and component faults, homeostasis in the
+    cybernetic sense that begins with purpose as feedback [@rosenblueth1943] and includes the regulator
+    theorem, by which every good regulator is a model of what it regulates [@ashby1956; @conant1970].'
+  evidence:
+    citation_id: conant1970
+    locator: Abstract
+    verified: true
+    verification_note: 'OpenAlex abstract: any regulator that is maximally successful and simple must
+      be isomorphic with the system regulated.'
+- id: barandiaran-agency
+  kind: source
+  passage: 'G5 is autonomous normativity: a system that constitutes and maintains its own conditions of
+    existence, the enactive criterion of individuality, normativity and asymmetry, which no software cube
+    meets [@barandiaran2009].'
+  evidence:
+    citation_id: barandiaran2009
+    locator: Abstract
+    verified: true
+    verification_note: 'Crossref abstract: individuality, interactional asymmetry and normativity as the
+      three conditions of genuine agency.'
+- id: basiri-chaos
+  kind: source
+  passage: 'The neighbouring traditions are close: fault injection validates recovery machinery [@hsueh1997],
+    chaos engineering stresses deployed services [@basiri2016], lesion and knockout studies map function
+    to components, and self-stabilization already covers recovery without a handler.'
+  evidence:
+    citation_id: basiri2016
+    locator: Abstract
+    verified: true
+    verification_note: 'OpenAlex abstract: chaos engineering as experimentation to verify reliability
+      of distributed software services. Hsueh et al. (1997) is the standard fault-injection survey (title-level).'
+runs:
+- id: cube
+  required: true
+  record: verification/cube.json

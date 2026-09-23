@@ -2,6 +2,16 @@
 
 Dated log of editorial passes and verification runs. Newest first.
 
+## 2026-09-23 — structured-evidence migration
+
+Structured-evidence migration (references and claims).
+- references.yaml: 28 CSL entries. 23 matched in Crossref with DOIs; zhang2025 and naor1995 completed from their Crossref records (DOIs 10.1177/10597123241269740 and 10.1137/S0097539793254571); dennett1987, joyner2008 and korf1997 (AAAI-97, pp. 700-705) entered by hand. In-text citations converted to Pandoc [@id]; legacy list replaced by the citeproc list.
+- Bibliographic corrections: conant1970 and hsueh1997 author names repaired from malformed Crossref records; the von Neumann chapter gained editors (Shannon, McCarthy) and pages 43-98; ghosh1996 proceedings title normalised.
+- claims.yaml: 78 claims (59 computation, 8 source, 5 interpretation, 3 definition, 2 assumption, 1 normative). The 72 percent zero-score share (2,632,650 / 3,674,160) and the 36,741,600 memory-augmented states are derived from stored counts and bound as interpretation with rationale. Source claims checked against Crossref/OpenAlex abstracts (Zhang et al. findings, Rokicki et al. diameter 20, Avizienis et al., Ghosh et al., Edelman and Gally, Conant and Ashby, Barandiaran et al., Basiri et al.).
+- Unverified, not bound: the self-sorting implementation details and delayed-gratification statistics 0.24/0.37 (not in the Zhang et al. abstract); Mordvintsev et al. training on damaged intermediates; Dijkstra/Herman/Naor-Stockmeyer/Angluin et al./von Neumann theory attributions (standard results, abstracts absent or not specific).
+- Execution receipt: run id cube (verification/cube.json), `uv run python run_all.py`, 28/28 invariants, results.json reproduced byte for byte.
+- metadata claims_target: claim-ledger.
+
 ## 2026-09-23 — prose revision
 
 Prose rewritten against the house standards. Headings made descriptive (Introduction, The self-sorting array experiments, Self-stabilization and related theory, The pocket cube as a test substrate, Composition of local correctness, Deterministic and stochastic repairs, Faults as probes, A ladder of goal-directedness, Conditions for faultization as a method, Objections, Falsification, Conclusion, Reproducibility).

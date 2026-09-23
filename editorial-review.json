@@ -1,10 +1,10 @@
 {
-  "manuscript_sha256": "9e114e8534e897e4cf506cf4b493759016460fdb72d95963ef4660966470c72f",
+  "manuscript_sha256": "d5dfbf3e4a51d06993a87edac22210d9d7888ca8113203ca2e685204738d7580",
   "full_read": true,
   "argument_review": true,
   "structure_review": true,
   "voice_review": true,
   "source_review": true,
   "final_read": true,
-  "notes": "Prose revision: descriptive headings; 'this paper' 12 -> 0 and 'rather than' 8 -> 0; abstract rewritten (257 words); aphoristic lines and the closing epigram removed; a reference to the seed replaced; the noise optimum corrected from a grid point to a refined value; equilibrium counts stated exactly; all citations preserved."
+  "notes": "Structured-evidence migration: inline bibliography converted to references.yaml (CSL) with Pandoc [@id] citations; claims.yaml ledger and execution receipt added; prose unchanged."
 }
